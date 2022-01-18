@@ -1,0 +1,131 @@
+.extended-select{
+    width: 100%;
+    min-height: 100px;
+    
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.3s;
+    & >*{
+        width: 92%;
+        & > * {
+            width: 100%;  
+        }
+    }
+    &.show{
+        transition: all 0.3s;
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #FAFAFA;
+        
+        & > * {
+            width: 100%;
+            background: #FAFAFA;
+            & > * {
+                width: 94%;     
+            }     
+        }
+        & .option-field{
+            background: #FFFFFF;
+            & > * {
+                width: 100%;     
+            }   
+        }
+        & .extended-select__controls__title__back-button{
+            width: 16px;
+            height: 20px;
+            margin-right: 12px;
+        }
+    }
+
+    &__header{
+        margin-top: 15px;
+        min-height: 92px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom:  1px #D9D9D9 solid;
+        transition: all 0.3s;
+    }
+    &__footer{
+        border-top: 1px #D9D9D9 solid;
+        min-height: 70px;
+        display: flex;
+        justify-content: center;
+        &__wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__button{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            &:hover{
+                text-decoration: underline;
+            }
+            &-submit{
+                @extend .extended-select__footer__button;
+                background: #035B77;
+                border-radius: 4px;
+                padding: 14px 20px;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 18px;
+                color: #FFFFFF;
+            }
+            &-clear{
+                @extend .extended-select__footer__button;
+                color: #000000;
+                opacity: 0.6;
+            }
+        }
+    }
+    &__controls{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &__title{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            display: flex;
+            &__back-button{
+                width: 0px;
+                height: 0px;
+                cursor: pointer;
+                background-image: url(../assets/icons/back.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 90%;
+                transition: all 0.3s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &__counter{
+            cursor: pointer;
+        }
+    }
+
+    &__mainField{
+        margin-top: 15px;
+        background: #FFFFFF;
+        border: 1px solid #D9D9D9;
+        border-radius: 4px;
+        color: #272526;
+        padding: 9px 10px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+

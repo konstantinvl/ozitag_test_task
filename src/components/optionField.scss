@@ -1,0 +1,79 @@
+.option-field{
+    min-height: calc(100% - 92px - 85px);
+    max-height: calc(100% - 92px - 85px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &__option{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 6px 3%;
+        font-size: 14px;
+        line-height: 18px;
+        overflow: hidden;
+        transition: all 0.2s;
+        
+        &.checked{
+            background: linear-gradient(0deg,
+             rgba(3, 91, 119, 0.05),
+             rgba(3, 91, 119, 0.05)), #FFFFFF;
+        }
+        &.hidden{
+            height: 0;
+            width: 0;
+            padding: 0;
+        }
+        &__button{
+            background-image: url(../assets/icons/nested.png);
+            background-repeat: no-repeat;
+            background-size: 90%;
+            height: 3px;
+            width: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            &.hidden{
+                height: 0px;
+            }
+        }
+        &__label{
+            margin-left: 6px;
+        }
+        &__fake-checkbox{
+            width: 18px;
+            height: 20px;
+            background: #FFFFFF;
+            opacity: 0.2;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            cursor: pointer;
+            &.checked{
+                background: #035B77;
+                opacity: 1;
+                border: none;
+                background-image: url(../assets/icons/check.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: initial;
+            }
+        }
+        &__checkbox{
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            position: absolute;   
+        }
+    }
+
+    &::-webkit-scrollbar{
+        background-color: #FFF;
+        width: 0px;
+    }
+    &::-webkit-scrollbar-button{
+        width: 0;
+        height: 0;
+    }
+    &::-webkit-scrollbar-thumb{
+        background:black;
+        border-radius: 8px;
+    }
+}
